@@ -4,42 +4,42 @@
 
 ?>
 <div class = "divFormCadFuncionarios">
-    <form class = "container" action = "produto_add.php" method = "POST">
+    <form class = "container" action = "add_funcionario.php" method = "POST">
         <div class = "divGambiarra01">
             <div class = "container">
                 <div class="form-group">
-                    <label for="nome_fun">Nome do Funcionário</label>
-                    <input type="text" class="form-control" name="nome_fun" placeholder="Código da Categoria">
+                    <label for="id_funcionario">Identificador do Funcion�rio</label>
+                    <input type="number" class="form-control" name="id_funcionario" placeholder="Nome">
+                </div>
+                <div class="form-group">
+                    <label for="nome_fun">Nome do Funcion�rio</label>
+                    <input type="text" class="form-control" name="nome_fun" placeholder="Nome">
                 </div>
                 <div class="form-group">
                     <label for="sobrenome_fun">Sobrenome</label>
-                    <input type="text" class="form-control" name="sobrenome_fun" placeholder="Descrição do Produto">
+                    <input type="text" class="form-control" name="sobrenome_fun" placeholder="Sobrenome">
                 </div>
                 <div class="form-group">
-                    <label for="titulo_fun">Código do Produto</label>
-                    <input type="text" class="form-control" name="titulo_fun" placeholder="Código do Produto">
+                    <label for="titulo_cortesia">Titulo</label>
+                    <input type="text" class="form-control" name="titulo" placeholder="Nome do Produto">
                 </div>
                 <div class="form-group">
-                    <label for="titulo_cortesia">Nome do Produto</label>
-                    <input type="text" class="form-control" name="titulo_cortesia" placeholder="Nome do Produto">
+                    <label for="preco">Titulo Cortesia</label>
+                    <input type="text" class="form-control" name="titulo_cortesia" placeholder="Preço do Produto">
                 </div>
                 <div class="form-group">
-                    <label for="preco">Preço do Produto</label>
-                    <input type="number" class="form-control" name="preco" placeholder="Preço do Produto">
-                </div>
-                <div class="form-group">
-                    <label for="data_nasc">Preço do Produto</label>
+                    <label for="data_nasc">Data de Nascimento</label>
                     <input type="date" class="form-control" name="data_nasc" placeholder="Preço do Produto">
                 </div>
                 <div class="form-group">
-                    <label for="data_adm">Preço do Produto</label>
+                    <label for="data_adm">Data de Adminiss�o</label>
                     <input type="date" class="form-control" name="data_adm" placeholder="Preço do Produto">
                 </div>
             </div>
 
             <div class = "container">
                 <div class="form-group">
-                    <label for="endereco">Endereço</label>
+                    <label for="endereco">Endere�o</label>
                     <input type="text" class="form-control" name="endereco" placeholder="Código da Categoria">
                 </div>
                 <div class="form-group">
@@ -62,14 +62,14 @@
                     <label for="tel_residencial">Telefone Residencial</label>
                     <input type="text" class="form-control" name="tel_residencial" placeholder="Preço do Produto">
                 </div>
-                <div class="form-group">
+<!--                <div class="form-group">
                     <label for="extensao">Extensão</label>
                     <input type="text" class="form-control" name="extensao" placeholder="Preço do Produto">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Foto de Perfil</label>
                     <input type="file" id="exampleInputFile">
-                </div>
+                </div>-->
             </div>
         </div>
         <button type="submit" class="btn btn-default">Confirmar</button>

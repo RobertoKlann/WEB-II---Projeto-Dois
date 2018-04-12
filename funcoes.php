@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * MÃ©todo utilizado para buscar todos os funcionÃ¡rios cadastrados
+     * Método utilizado para buscar todos os funcionários cadastrados
      * 
      * return type Array[]
      */
@@ -21,14 +21,16 @@
               FROM funcionarios
         ";
 
-
-        $oConsulta = mysqli_query($oConexao, $sSql);
-        while($oLinhas = mysqli_fetch_array($oConsulta)){
-            $aFuncionarios = $oLinhas;
-        }
-        
-        return $aFuncionarios;
+        return mysqli_query($oConexao, $sSql);
     }
 
+    function insereFuncionario($oConexao, $aCampos) {
+        $sSql = "
+            INSERT INTO funcionarios(IDFuncionario, Sobrenome, Nome, Titulo, TituloCortesia, DataNac, DataAdmissao, Endereco, Cidade, Regiao, Cep, Pais, TelefoneResidencial)
+                 VALUES(" . $aCampos["id_funcionario"]. ",'" . $aCampos["sobrenome_fun"]. "','" . $aCampos["nome_fun"]. "','" . $aCampos["titulo"]. "','". $aCampos["titulo_cortesia"]. "','" . $aCampos["data_nasc"]. "','"
+                . $aCampos["data_adm"]. "','" . $aCampos["endereco"]. "','" . $aCampos["cidade"]. "','" . $aCampos["regiao"]. "','" . $aCampos["cep"]. "','" . $aCampos["pais"]. "','" . $aCampos["tel_residencial"] . "')";
+        
+        return mysqli_query($oConexao, $sSql);
+    }
 
 ?>

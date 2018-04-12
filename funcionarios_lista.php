@@ -7,33 +7,30 @@
 
 <table  class ="table table-striped table-bordered">
     <tr>
-        <td>C√≥d Func</td>
-        <td>Nome Funcion√°rio</td>
+        <td>Cod Func</td>
+        <td>Nome Funcion·rop</td>
         <td>Titulo</td>
         <td>Data Nasc</td>
         <td>Data Adm</td>
         <td>Pais</td>
-        <td>Endere√ßo</td>
+        <td>EndereÁo</td>
         <td>Cidade</td>
-        <td>Foto</td>
     </tr>
 
     <?php
         $oConsulta = selectAllFuncionarios($oConexao);
-        var_dump($oConsulta); 
         foreach($oConsulta as $oFuncionario):
     ?>
 
     <tr>
-        <td><?= $oFuncionario[1] ?></td>
-        <td><?= $oFuncionario[0] ?></td>
-        <td><?= $oFuncionario[2] ?></td>
-        <td><?= $oFuncionario[3] ?></td>
-        <td><?= $oFuncionario[4] ?></td>
-        <td><?= $oFuncionario[5] ?></td>
-        <td><?= $oFuncionario[6] ?></td>
-        <td><?= $oFuncionario[7] ?></td>
-        <td><?= $oFuncionario[8] ?></td>
+        <td><?= $oFuncionario["IDFuncionario"] ?></td>
+        <td><?= $oFuncionario["Nome"] ?></td>
+        <td><?= $oFuncionario["Titulo"] ?></td>
+        <td><?= $oFuncionario["DataNac"] ?></td>
+        <td><?= $oFuncionario["DataAdmissao"] ?></td>
+        <td><?= $oFuncionario["Pais"] ?></td>
+        <td><?= $oFuncionario["Endereco"] ?></td>
+        <td><?= $oFuncionario["Cidade"] ?></td>
     </tr>
 
     <?php
