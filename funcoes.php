@@ -32,5 +32,35 @@
         
         return mysqli_query($oConexao, $sSql);
     }
-
+    
+    /**
+     * 
+     * 
+     * @param type $oConexao
+     * @param type $aCampos
+     * @return type
+     */
+    function alterarCampos($oConexao, $aCampos) {
+        $sSql = "UPDATE 
+                    SET
+                  WHERE
+                ";
+        
+        return mysqli_query($oConexao, $sSql);
+    }
+    
+    /**
+     * 
+     * 
+     * @param type $oConexao
+     * @param type $iId
+     * @return type
+     */
+    function excluiDado($oConexao, $iId) {
+        $sSql = "
+                ";
+        
+        return mysqli_query($oConexao,  $sSql);
+    }
+    
 ?>
