@@ -1,7 +1,13 @@
 <?php
-    include_once("header.php");
-    include_once("conect.php");
 
+    $sFileHeader          = dirname(__DIR__).'/header.php';
+    $sFilePersBancoDados  = dirname(__DIR__).'/Persistencia/PersistenciaBancoDados.php';
+    $sFilePersFuncionario = dirname(__DIR__).'/Persistencia/PersistenciaFuncionario.php';
+    $sFileFooter          = dirname(__DIR__).'/footer.php';
+    require_once($sFileHeader);
+    include_once($sFilePersBancoDados);
+    include_once($sFilePersFuncionario);
+    
 ?>
 <div class = "divFormCadFuncionarios">
     <form class = "container" action = "add_funcionario.php" method = "POST">
@@ -78,5 +84,5 @@
     </form>
 </div>
 <?php
-    include_once("footer.php");
+    include_once($sFileFooter);
 ?>

@@ -1,7 +1,15 @@
 <?php
-    include_once("header.php");
-    include_once("conect.php");
-    include_once("funcoes.php");
+
+    $sFileHeader          = dirname(__DIR__).'/header.php';
+    $sFilePersBancoDados  = dirname(__DIR__).'/Persistencia/PersistenciaBancoDados.php';
+    $sFilePersFuncionario = dirname(__DIR__).'/Persistencia/PersistenciaFuncionario.php';
+    $sFileFoote           = dirname(__DIR__).'/footer.php';
+    require_once($sFileHeader);
+    include_once($sFilePersBancoDados);
+    include_once($sFilePersFuncionario);
+   
+    $oPersConexao      = new PersistenciaBancoDados("localhost", "root", "", "northwind");
+    $oPersFuncionario  = new PersistenciaFuncionario($oPersConexao);
 
 ?>
 
@@ -19,7 +27,7 @@
     </tr>
 
     <?php
-        $oConsulta = selectAllFuncionarios($oConexao);
+        $oConsulta = $oPersFuncionario->selectAllFuncionarios();
         foreach($oConsulta as $oFuncionario):
     ?>
 
@@ -33,11 +41,11 @@
         <td><?= $oFuncionario["Endereco"] ?></td>
         <td><?= $oFuncionario["Cidade"] ?></td>
         <td>
-            <form class="btn-group" action ="form_alterar.php" method ="POST">
+            <form class="btn-group" action ="ViewManutencaoFuncionario.php" method ="POST">
                 <input type ="hidden" name ="id" value="<?php echo $oFuncionario["IDFuncionario"]?>">
                 <input class ="btn btn-primary" type ="submit" value ="Alterar"></input>
             </form>
-            <form class="btn-group" action ="funcionarios_delete.php" method ="POST">
+            <form class="btn-group" action ="ControllerFuncionarioDelete.php" method ="POST">
                 <input type ="hidden" name ="id" value="<?php echo $oFuncionario["IDFuncionario"]?>">
                 <input class ="btn btn-primary" type ="submit" value ="Excluir"></input>
             </form>
@@ -49,5 +57,5 @@
     ?>
 </table>
 <?php
-    include_once("footer.php");
+    include_once($sFileFoote);
 ?>
