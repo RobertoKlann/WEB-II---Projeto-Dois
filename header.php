@@ -22,7 +22,7 @@
                     <li><a href ="">Produtos</a></li>
                     <li><a href ="">Ordens</a></li>
                     <li><a href ="">Clientes</a></li>
-                    <li><a href ="sobre.php">Sobre</a></li>
+                    <li><a href ="">Sobre</a></li>
                 </ul>
             </div>
         </div>

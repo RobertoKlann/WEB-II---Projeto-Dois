@@ -41,12 +41,12 @@
         <td><?= $oFuncionario["Endereco"] ?></td>
         <td><?= $oFuncionario["Cidade"] ?></td>
         <td>
-            <form class="btn-group" action ="ViewManutencaoFuncionario.php" method ="POST">
-                <input type ="hidden" name ="id" value="<?php echo $oFuncionario["IDFuncionario"]?>">
+            <form class="btn-group" action ="ViewManutencaoFuncionarioAlterar.php" method ="POST">
+                <input type ="hidden" name ="IDFuncionario" value="<?php echo $oFuncionario["IDFuncionario"]?>">
                 <input class ="btn btn-primary" type ="submit" value ="Alterar"></input>
             </form>
             <form class="btn-group" action ="ControllerFuncionarioDelete.php" method ="POST">
-                <input type ="hidden" name ="id" value="<?php echo $oFuncionario["IDFuncionario"]?>">
+                <input type ="hidden" name ="IDFuncionario" value="<?php echo $oFuncionario["IDFuncionario"]?>">
                 <input class ="btn btn-primary" type ="submit" value ="Excluir"></input>
             </form>
         </td>

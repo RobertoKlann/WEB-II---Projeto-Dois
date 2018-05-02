@@ -1,26 +1,46 @@
-<?php
+<?php 
+    $sFileHeader          = dirname(__DIR__).'/header.php';
+    $sFilePersBancoDados  = dirname(__DIR__).'/Persistencia/PersistenciaBancoDados.php';
+    $sFilePersFuncionario = dirname(__DIR__).'/Persistencia/PersistenciaFuncionario.php';
     
-    include_once("conect.php");
-    include_once("funcoes.php");
+    require_once($sFileHeader);
+    include_once($sFilePersBancoDados);
+    include_once($sFilePersFuncionario);
     
+    $oConexao     = new PersistenciaBancoDados("localhost", "root", "", "northwind");
+    $oFuncionario = new PersistenciaFuncionario($oConexao);
+   
     $aCampos = [
-        "id_funcionario"  => "id_funcionario",
-        "nome_fun"        => "nome_fun",
-        "sobrenome_fun"   => "sobrenome_fun",
-        "titulo"          => "titulo",
-        "titulo_cortesia" => "titulo_cortesia",
-        "data_nasc"       => "data_nasc",
-        "data_adm"        => "data_adm",
-        "endereco"        => "endereco",
-        "cidade"          => "cidade",
-        "regiao"          => "regiao",
-        "cep"             => "cep",
-        "pais"            => "pais",
-        "tel_residencial" => "tel_residencial"
+        "IDFuncionario"       => $_POST["IDFuncionario"],
+        "Nome"                => $_POST["Nome"],
+        "Sobrenome"           => $_POST["Sobrenome"],
+        "Titulo"              => $_POST["Titulo"],
+        "TituloCortesia"      => $_POST["TituloCortesia"],
+        "DataNac"             => $_POST["DataNac"],
+        "DataAdmissao"        => $_POST["DataAdmissao"],
+        "Endereco"            => $_POST["Endereco"],
+        "Cidade"              => $_POST["Cidade"],
+        "Regiao"              => $_POST["Regiao"],
+        "Cep"                 => $_POST["Cep"],
+        "Pais"                => $_POST["Pais"],
+        "TelefoneResidencial" => $_POST["TelefoneResidencial"]
     ];
     
-    $bAlterar = alterarCampos($oConexao, $aCampos);
+    $oFunc = $oFuncionario->alterarCampos($aCampos);
     
-    if($bAlterar) {
-        
+    if(!$oFunc) {
+        ?>
+        <script>
+        alert("Funcionário não alterado!");
+        window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
+        </script>
+        <?php 
+    } else {
+    ?>
+        <script>
+            alert("Funcionário alterado com sucesso!");
+            window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
+        </script>
+    <?php
     }
+  

@@ -1,67 +1,79 @@
-<?php 
-    include_once("PersistenciaBancoDados.php");
-    include_once("header.php");
+<?php
 
+    $sFileHeader          = dirname(__DIR__).'/header.php';
+    $sFilePersBancoDados  = dirname(__DIR__).'/Persistencia/PersistenciaBancoDados.php';
+    $sFilePersFuncionario = dirname(__DIR__).'/Persistencia/PersistenciaFuncionario.php';
+    $sFileFooter          = dirname(__DIR__).'/footer.php';
+    require_once($sFileHeader);
+    include_once($sFilePersBancoDados);
+    include_once($sFilePersFuncionario);
+    
+    
+    $oConexao     = new PersistenciaBancoDados("localhost", "root", "", "northwind");
+    $oFuncionario = new PersistenciaFuncionario($oConexao);
+    
+    $iId = $_POST["IDFuncionario"];
+    $oFunc = $oFuncionario->buscaFuncionario($iId);
 ?>
 
 <div class = "divFormCadFuncionarios">
-    <form class = "container" action = "add_funcionario.php" method = "POST">
+    <form class = "container" action = "ControllerFuncionarioUpdate.php" method = "POST">
         <div class = "divGambiarra01">
             <div class = "container">
                 <div class="form-group">
-                    <label for="id_funcionario">Identificador do Funcion�rio</label>
-                    <input type="hidden" class="form-control" name="id_funcionario" placeholder="Nome">
+                    
+                    <input type="hidden" class="form-control" name="IDFuncionario" value="<?php echo $oFunc[0]['IDFuncionario'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="nome_fun">Nome do Funcion�rio</label>
-                    <input type="text" class="form-control" name="nome_fun" placeholder="Nome">
+                    <input type="text" class="form-control" name="Nome" value="<?php echo $oFunc[0]['Nome'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="sobrenome_fun">Sobrenome</label>
-                    <input type="text" class="form-control" name="sobrenome_fun" placeholder="Sobrenome">
+                    <input type="text" class="form-control" name="Sobrenome" value="<?php echo $oFunc[0]['Sobrenome'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="titulo_cortesia">Titulo</label>
-                    <input type="text" class="form-control" name="titulo" placeholder="Nome do Produto">
+                    <input type="text" class="form-control" name="Titulo" value="<?php echo $oFunc[0]['Titulo'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="preco">Titulo Cortesia</label>
-                    <input type="text" class="form-control" name="titulo_cortesia" placeholder="Preço do Produto">
+                    <input type="text" class="form-control" name="TituloCortesia" value="<?php echo $oFunc[0]['TituloCortesia'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="data_nasc">Data de Nascimento</label>
-                    <input type="date" class="form-control" name="data_nasc" placeholder="Preço do Produto">
+                    <input type="date" class="form-control" name="DataNac" value="<?php echo $oFunc[0]['DataNac'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="data_adm">Data de Adminiss�o</label>
-                    <input type="date" class="form-control" name="data_adm" placeholder="Preço do Produto">
+                    <input type="date" class="form-control" name="DataAdmissao" value="<?php echo $oFunc[0]['DataAdmissao'] ?>" >
                 </div>
             </div>
 
             <div class = "container">
                 <div class="form-group">
                     <label for="endereco">Endere�o</label>
-                    <input type="text" class="form-control" name="endereco" placeholder="Código da Categoria">
+                    <input type="text" class="form-control" name="Endereco" value="<?php echo $oFunc[0]['Endereco'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="cidade">Cidade</label>
-                    <input type="text" class="form-control" name="cidade" placeholder="Descrição do Produto">
+                    <input type="text" class="form-control" name="Cidade" value="<?php echo $oFunc[0]['Cidade'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="regiao">Região</label>
-                    <input type="text" class="form-control" name="regiao" placeholder="Código do Produto">
+                    <input type="text" class="form-control" name="Regiao" value="<?php echo $oFunc[0]['Regiao'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="cep">Cep</label>
-                    <input type="text" class="form-control" name="cep" placeholder="Nome do Produto">
+                    <input type="text" class="form-control" name="Cep" value="<?php echo $oFunc[0]['Cep'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="pais">País</label>
-                    <input type="text" class="form-control" name="pais" placeholder="Preço do Produto">
+                    <input type="text" class="form-control" name="Pais" value="<?php echo $oFunc[0]['Pais'] ?>" >
                 </div>
                 <div class="form-group">
                     <label for="tel_residencial">Telefone Residencial</label>
-                    <input type="text" class="form-control" name="tel_residencial" placeholder="Preço do Produto">
+                    <input type="text" class="form-control" name="TelefoneResidencial" value="<?php echo $oFunc[0]['TelefoneResidencial'] ?>" >
                 </div>
 <!--                <div class="form-group">
                     <label for="extensao">Extensão</label>
@@ -80,5 +92,4 @@
 </div>
 
 <?php
-    include_once("footer.php");
-?>
+    include_once($sFileFooter);

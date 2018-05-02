@@ -66,10 +66,24 @@ class PersistenciaFuncionario {
      * @return type
      */
     public function alterarCampos($aCampos) {
-        $sSql = "UPDATE 
-                    SET
-                  WHERE
-                ";
+        $sSql = "UPDATE funcionarios
+                    SET IDFuncionario       = " . $aCampos["IDFuncionario"] . ",
+                        Nome                = '" . $aCampos["Nome"] . "',
+                        Sobrenome           = '" . $aCampos["Sobrenome"] . "',
+                        Titulo              = '" . $aCampos["Titulo"] . "',
+                        TituloCortesia      = '" . $aCampos["TituloCortesia"] . "',
+                        DataNac             = '" . $aCampos["DataNac"] . "',
+                        DataAdmissao        = '" . $aCampos["DataAdmissao"] . "',
+                        Endereco            = '" . $aCampos["Endereco"] . "',
+                        Cidade              = '" . $aCampos["Cidade"] . "',
+                        Regiao              = '" . $aCampos["Regiao"] . "',
+                        Cep                 = '" . $aCampos["Cep"] . "',
+                        Pais                = '" . $aCampos["Pais"] . "',
+                        TelefoneResidencial = '" . $aCampos["TelefoneResidencial"] . "'
+                  WHERE IDFuncionario = " . $aCampos["IDFuncionario"];
+        
+        var_dump($sSql);
+        die();
         
         return mysqli_query($this->oFuncao->getConexao(), $sSql);
     }
@@ -86,6 +100,33 @@ class PersistenciaFuncionario {
                 ";
         
         return mysqli_query($this->oFuncao->getConexao(),  $sSql);
+    }
+    
+    public function buscaFuncionario($iId) {
+        $aFuncionario = [];
+        $sSql = "
+            SELECT IDFuncionario,
+                   Nome,
+                   Sobrenome,
+                   Titulo,
+                   TituloCortesia,
+                   DataNac,
+                   DataAdmissao,
+                   Endereco,
+                   Cidade,
+                   Regiao,
+                   Cep,
+                   Pais,
+                   TelefoneResidencial
+              FROM funcionarios
+             WHERE IDFuncionario = " . $iId;
+        
+        $oFuncionario = mysqli_query($this->oFuncao->getConexao(), $sSql);
+        while($oLinhas = mysqli_fetch_array($oFuncionario)) {
+            $aFuncionario[] = $oLinhas;
+        }
+        
+        return $aFuncionario;
     }
     
 }
