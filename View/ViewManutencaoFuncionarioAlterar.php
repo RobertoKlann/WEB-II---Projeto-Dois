@@ -17,7 +17,7 @@
 ?>
 
 <div class = "divFormCadFuncionarios">
-    <form class = "container" action = "ControllerFuncionarioUpdate.php" method = "POST">
+    <form class = "container" action = "/Roberto/WEB-II---Projeto-Dois/Controller/ControllerFuncionarioUpdate.php" method = "POST">
         <div class = "divGambiarra01">
             <div class = "container">
                 <div class="form-group">

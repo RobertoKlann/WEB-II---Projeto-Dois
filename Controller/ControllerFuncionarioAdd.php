@@ -1,31 +1,39 @@
 <?php
 
-    include_once("conect.php");
-    include_once("funcoes.php");
+    $sFileHeader          = dirname(__DIR__).'/header.php';
+    $sFilePersBancoDados  = dirname(__DIR__).'/Persistencia/PersistenciaBancoDados.php';
+    $sFilePersFuncionario = dirname(__DIR__).'/Persistencia/PersistenciaFuncionario.php';
+    
+    require_once($sFileHeader);
+    include_once($sFilePersBancoDados);
+    include_once($sFilePersFuncionario);
+    
+    $oConexao     = new PersistenciaBancoDados("localhost", "root", "", "northwind");
+    $oFuncionario = new PersistenciaFuncionario($oConexao);
     
     $aCampos = [
-        "id_funcionario"  =>  $_POST["id_funcionario"],
-        "nome_fun"        => $_POST["nome_fun"],
-        "sobrenome_fun"   => $_POST["sobrenome_fun"],
-        "titulo"          => $_POST["titulo"],
-        "titulo_cortesia" => $_POST["titulo_cortesia"],
-        "data_nasc"       => $_POST["data_nasc"],
-        "data_adm"        => $_POST["data_adm"],
-        "endereco"        => $_POST["endereco"],
-        "cidade"          => $_POST["cidade"],
-        "regiao"          => $_POST["regiao"],
-        "cep"             => $_POST["cep"],
-        "pais"            => $_POST["pais"],
-        "tel_residencial" => $_POST["tel_residencial"]
+        "IDFuncionario"       => $_POST["IDFuncionario"],
+        "Nome"                => $_POST["Nome"],
+        "Sobrenome"           => $_POST["Sobrenome"],
+        "Titulo"              => $_POST["Titulo"],
+        "TituloCortesia"      => $_POST["TituloCortesia"],
+        "DataNac"             => $_POST["DataNac"],
+        "DataAdmissao"        => $_POST["DataAdmissao"],
+        "Endereco"            => $_POST["Endereco"],
+        "Cidade"              => $_POST["Cidade"],
+        "Regiao"              => $_POST["Regiao"],
+        "Cep"                 => $_POST["Cep"],
+        "Pais"                => $_POST["Pais"],
+        "TelefoneResidencial" => $_POST["TelefoneResidencial"]
     ];
     
-    $bInsersao = insereFuncionario($oConexao, $aCampos);
+    $bInsersao = $oFuncionario->insereFuncionario($aCampos);
     
     if($bInsersao) {
 ?>
 <script>
-     alert("Funcionário cadastrado com Sucesso!");
-            window.location.href = 'cadastro_funcionarios.php';
+    alert("Funcionário cadastrado com Sucesso!");s
+    window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
 </script>
 
 <?php
@@ -33,7 +41,7 @@
 ?>
 <script>
     alert("Funcionário não cadastrado!");
-    window.location.href = 'cadastro_funcionarios.php';
+    window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
 </script>
 <?php
     

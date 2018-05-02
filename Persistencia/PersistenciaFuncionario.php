@@ -82,9 +82,6 @@ class PersistenciaFuncionario {
                         TelefoneResidencial = '" . $aCampos["TelefoneResidencial"] . "'
                   WHERE IDFuncionario = " . $aCampos["IDFuncionario"];
         
-        var_dump($sSql);
-        die();
-        
         return mysqli_query($this->oFuncao->getConexao(), $sSql);
     }
     
