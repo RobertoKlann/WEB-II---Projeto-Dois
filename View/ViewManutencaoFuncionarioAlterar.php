@@ -22,10 +22,10 @@
             <div class = "container">
                 <div class="form-group">
                     
-                    <input type="hidden" class="form-control" name="IDFuncionario" value="<?php echo $oFunc[0]['IDFuncionario'] ?>">
+                    <input type="hidden" class="form-control" name="IDFuncionÃ¡rio" value="<?php echo $oFunc[0]['IDFuncionario'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="nome_fun">Nome do Funcionário</label>
+                    <label for="nome_fun">Nome do Funcionï¿½rio</label>
                     <input type="text" class="form-control" name="Nome" value="<?php echo $oFunc[0]['Nome'] ?>" >
                 </div>
                 <div class="form-group">
@@ -45,14 +45,14 @@
                     <input type="date" class="form-control" name="DataNac" value="<?php echo $oFunc[0]['DataNac'] ?>" >
                 </div>
                 <div class="form-group">
-                    <label for="data_adm">Data de Adminissão</label>
+                    <label for="data_adm">Data de Adminissï¿½o</label>
                     <input type="date" class="form-control" name="DataAdmissao" value="<?php echo $oFunc[0]['DataAdmissao'] ?>" >
                 </div>
             </div>
 
             <div class = "container">
                 <div class="form-group">
-                    <label for="endereco">Endereço</label>
+                    <label for="endereco">Endereï¿½o</label>
                     <input type="text" class="form-control" name="Endereco" value="<?php echo $oFunc[0]['Endereco'] ?>" >
                 </div>
                 <div class="form-group">

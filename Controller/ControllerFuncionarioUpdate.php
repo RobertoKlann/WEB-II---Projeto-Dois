@@ -2,7 +2,6 @@
     $sFilePersBancoDados  = dirname(__DIR__).'/Persistencia/PersistenciaBancoDados.php';
     $sFilePersFuncionario = dirname(__DIR__).'/Persistencia/PersistenciaFuncionario.php';
     
-    require_once($sFileHeader);
     include_once($sFilePersBancoDados);
     include_once($sFilePersFuncionario);
     
@@ -37,7 +36,7 @@
     } else {
     ?>
         <script>
-            alert("Funcionário alterado com sucesso!");
+            sweetAlert("Funcionário alterado com sucesso!");
             window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
         </script>
     <?php

@@ -17,11 +17,12 @@
                 </div>
                 <div>
                     <ul class ="nav navbar-nav">
-                        <li><a href ="/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php">Funcion&aacute;rios</a></li>
+                        <li><a href ="/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php">Funcionários</a></li>
                         <li><a href ="/Roberto/WEB-II---Projeto-Dois/View/ViewManutencaoFuncionario.php">Cadastrar Clientes</a></li>
                         <li><a href ="">Território</a></li>
                         <li><a href ="">Região</a></li>
                     </ul>
+                    
                 </div>
             </div>
         </div>

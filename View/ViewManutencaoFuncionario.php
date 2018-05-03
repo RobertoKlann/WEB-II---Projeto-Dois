@@ -13,7 +13,7 @@ include_once($sFilePersFuncionario);
             <div class = "container">
                 <div class="form-group">
                     <label for="id_funcionario">Identificador do Funcionário</label>
-                    <input type="number" class="form-control" name="IDFuncionario" placeholder="Nome">
+                    <input type="number" class="form-control" name="IDFuncionario" placeholder="Código do Funcionário">
                 </div>
                 <div class="form-group">
                     <label for="nome_fun">Nome do Funcionário</label>
@@ -63,8 +63,8 @@ include_once($sFilePersFuncionario);
                     <input type="text" class="form-control" name="Pais" placeholder="País">
                 </div>
                 <div class="form-group">
-                    <label for="tel_residencial">Telefone Residencial</label>
-                    <input type="text" class="form-control" name="TelefoneResidencial" placeholder="Telefone">
+                    <label for="phonenum">Telefone Residencial</label>
+                    <input type="tel" pattern="^\d{4}-\d{3}-\d{4}$" class="form-control" name="TelefoneResidencial" placeholder="Telefone">
                 </div>
             </div>
         </div>
