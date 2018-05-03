@@ -1,5 +1,4 @@
 <?php 
-    $sFileHeader          = dirname(__DIR__).'/header.php';
     $sFilePersBancoDados  = dirname(__DIR__).'/Persistencia/PersistenciaBancoDados.php';
     $sFilePersFuncionario = dirname(__DIR__).'/Persistencia/PersistenciaFuncionario.php';
     
@@ -31,14 +30,14 @@
     if(!$oFunc) {
         ?>
         <script>
-        alert("Funcion·rio n„o alterado!");
+        alert("Funcion√°rio n√£o alterado!");
         window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
         </script>
         <?php 
     } else {
     ?>
         <script>
-            alert("Funcion·rio alterado com sucesso!");
+            alert("Funcion√°rio alterado com sucesso!");
             window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
         </script>
     <?php

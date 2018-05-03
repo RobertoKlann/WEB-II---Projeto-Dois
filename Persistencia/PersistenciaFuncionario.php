@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Classe Controladora de todas as funcções utilizadas na aplicação.
+ * Classe Controladora de todas as funcÃ§Ãµes utilizadas na aplicaÃ§Ã£o.
  * 
  * @author Roberto Oswaldo Klann
  * @since  25/04/2018 
@@ -20,7 +20,7 @@ class PersistenciaFuncionario {
     }   
     
     /**
-     * Utilizado para buscar todos os funcionários cadastrados
+     * Utilizado para buscar todos os funcionÃ¡rios cadastrados
      * 
      * return type Array[]
      */
@@ -44,7 +44,7 @@ class PersistenciaFuncionario {
     }
 
     /**
-     * Insere os funcionários.
+     * Insere os funcionÃ¡rios.
      * 
      * @param type $aCampos
      * @return type
@@ -52,14 +52,14 @@ class PersistenciaFuncionario {
     public function insereFuncionario($aCampos) {
         $sSql = "
             INSERT INTO funcionarios(IDFuncionario, Sobrenome, Nome, Titulo, TituloCortesia, DataNac, DataAdmissao, Endereco, Cidade, Regiao, Cep, Pais, TelefoneResidencial)
-                 VALUES(" . $aCampos["id_funcionario"]. ",'" . $aCampos["sobrenome_fun"]. "','" . $aCampos["nome_fun"]. "','" . $aCampos["titulo"]. "','". $aCampos["titulo_cortesia"]. "','" . $aCampos["data_nasc"]. "','"
-                . $aCampos["data_adm"]. "','" . $aCampos["endereco"]. "','" . $aCampos["cidade"]. "','" . $aCampos["regiao"]. "','" . $aCampos["cep"]. "','" . $aCampos["pais"]. "','" . $aCampos["tel_residencial"] . "')";
+                 VALUES(" . $aCampos["IDFuncionario"]. ",'" . $aCampos["Sobrenome"]. "','" . $aCampos["Nome"]. "','" . $aCampos["Titulo"]. "','". $aCampos["TituloCortesia"]. "','" . $aCampos["DataNac"]. "','"
+                . $aCampos["DataAdmissao"]. "','" . $aCampos["Endereco"]. "','" . $aCampos["Cidade"]. "','" . $aCampos["Regiao"]. "','" . $aCampos["Cep"]. "','" . $aCampos["Pais"]. "','" . $aCampos["TelefoneResidencial"] . "')";
         
         return mysqli_query($this->oFuncao->getConexao(), $sSql);
     }
     
     /**
-     * Realiza o UPDATE no funcionário desejado.
+     * Realiza o UPDATE no funcionÃ¡rio desejado.
      * 
      * @param type $oConexao
      * @param type $aCampos
@@ -86,17 +86,18 @@ class PersistenciaFuncionario {
     }
     
     /**
-     * Realiza o DELETE do funcionário desejado.
+     * Realiza o DELETE do funcionÃ¡rio desejado.
      * 
      * @param type $oConexao
      * @param type $iId
      * @return type
      */
-    public function excluiDado($iId) {
-        $sSql = "
-                ";
+    public function excluiFuncionario($iId) {
+        $sSql = "DELETE 
+                   FROM funcionarios
+                  WHERE IDFuncionario = " . $iId;
         
-        return mysqli_query($this->oFuncao->getConexao(),  $sSql);
+        return mysqli_query($this->oFuncao->getConexao(), $sSql);
     }
     
     public function buscaFuncionario($iId) {
