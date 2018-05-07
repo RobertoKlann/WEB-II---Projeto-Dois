@@ -2,7 +2,7 @@
 
 class PersistenciaRegiao {
     
-    private $oConexao;
+    private $oRegiao;
     
     /**
      * Construtor da Classe
@@ -10,11 +10,15 @@ class PersistenciaRegiao {
      * @param type $oConexao
      */
     public function __construct($oConexao) {
-        $this->oConexao = $oConexao;
+        $this->oRegiao = $oConexao;
     }
     
-    public function addRegiao() {
+    public function addRegiao($aCampos) {
+        $sSql = "
+            INSERT INTO regiao(IDRegiao, DescricaoRegiao)    
+                 VALUES(" . $aCampos["IDRegiao"]. ",'" . $aCampos["DescricaoRegiao"]. "')";
         
+        return mysqli_query($this->oRegiao->getConexao(), $sSql);
     }
     
     public function deleteRegiao() {
@@ -25,8 +29,12 @@ class PersistenciaRegiao {
         
     }
     
-    public function selecionaRegiao() {
+    public function getSqlConsultaPadrao() {
+        $sSql = "
+            SELECT *
+              FROM regiao";
         
+        return mysqli_query($this->oRegiao->getConexao(), $sSql);
     }
     
 }

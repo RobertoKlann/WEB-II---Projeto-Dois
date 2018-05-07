@@ -36,7 +36,7 @@
     } else {
     ?>
         <script>
-            sweetAlert("Funcionário alterado com sucesso!");
+            alert("Funcionário alterado com sucesso!");
             window.location.href = '/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php';
         </script>
     <?php

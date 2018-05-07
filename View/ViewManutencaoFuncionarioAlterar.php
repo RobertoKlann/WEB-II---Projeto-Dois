@@ -22,10 +22,10 @@
             <div class = "container">
                 <div class="form-group">
                     
-                    <input type="hidden" class="form-control" name="IDFuncionário" value="<?php echo $oFunc[0]['IDFuncionario'] ?>">
+                    <input type="hidden" class="form-control" name="IDFuncionario" value="<?php echo $oFunc[0]['IDFuncionario'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="nome_fun">Nome do Funcion�rio</label>
+                    <label for="nome_fun">Nome do Funcionário</label>
                     <input type="text" class="form-control" name="Nome" value="<?php echo $oFunc[0]['Nome'] ?>" >
                 </div>
                 <div class="form-group">
@@ -45,14 +45,14 @@
                     <input type="date" class="form-control" name="DataNac" value="<?php echo $oFunc[0]['DataNac'] ?>" >
                 </div>
                 <div class="form-group">
-                    <label for="data_adm">Data de Adminiss�o</label>
+                    <label for="data_adm">Data de Admissão</label>
                     <input type="date" class="form-control" name="DataAdmissao" value="<?php echo $oFunc[0]['DataAdmissao'] ?>" >
                 </div>
             </div>
 
             <div class = "container">
                 <div class="form-group">
-                    <label for="endereco">Endere�o</label>
+                    <label for="endereco">Endereço</label>
                     <input type="text" class="form-control" name="Endereco" value="<?php echo $oFunc[0]['Endereco'] ?>" >
                 </div>
                 <div class="form-group">
@@ -72,7 +72,7 @@
                     <input type="text" class="form-control" name="Pais" value="<?php echo $oFunc[0]['Pais'] ?>" >
                 </div>
                 <div class="form-group">
-                    <label for="tel_residencial">Telefone Residencial</label>
+                    <label for="text">Telefone Residencial</label>
                     <input type="text" class="form-control" name="TelefoneResidencial" value="<?php echo $oFunc[0]['TelefoneResidencial'] ?>" >
                 </div>
 <!--                <div class="form-group">
@@ -86,7 +86,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-default">Confirmar</button>
-        <a class="btn btn-default" href = "produto_lista.php">Cancelar</a>
+        <a class="btn btn-default" href = "/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php">Cancelar</a>
         <button class="btn btn-default" >Limpar</button>   
     </form>
 </div>

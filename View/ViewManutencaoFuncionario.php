@@ -44,7 +44,7 @@ include_once($sFilePersFuncionario);
             <div class = "container">
                 <div class="form-group">
                     <label for="endereco">Endereço</label>
-                    <input type="text" class="form-control" name="Endereco" placeholder="Endereço">
+                    <input type="text" class="form-control" name="Endereço" placeholder="Endereço">
                 </div>
                 <div class="form-group">
                     <label for="cidade">Cidade</label>
@@ -52,7 +52,7 @@ include_once($sFilePersFuncionario);
                 </div>
                 <div class="form-group">
                     <label for="regiao">Região</label>
-                    <input type="text" class="form-control" name="Regiao" placeholder="Região">
+                    <input type="text" class="form-control" name="Região" placeholder="Região">
                 </div>
                 <div class="form-group">
                     <label for="cep">Cep</label>
@@ -63,13 +63,13 @@ include_once($sFilePersFuncionario);
                     <input type="text" class="form-control" name="Pais" placeholder="País">
                 </div>
                 <div class="form-group">
-                    <label for="phonenum">Telefone Residencial</label>
-                    <input type="tel" pattern="^\d{4}-\d{3}-\d{4}$" class="form-control" name="TelefoneResidencial" placeholder="Telefone">
+                    <label for="text">Telefone Residencial</label>
+                    <input type="text" class="form-control" name="TelefoneResidencial" placeholder="Telefone">
                 </div>
             </div>
         </div>
         <button type="submit" class="btn btn-default">Confirmar</button>
-        <a class="btn btn-default" href = "produto_lista.php">Cancelar</a>
+        <a class="btn btn-default" href = "/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php">Cancelar</a>
         <button class="btn btn-default" >Limpar</button>
     </form>
 </div>
