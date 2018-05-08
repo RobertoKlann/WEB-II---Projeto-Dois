@@ -7,7 +7,7 @@ require_once($sFileHeader);
 include_once($sFilePersBancoDados);
 include_once($sFilePersTerritorio);
 
-$oPersConexao = new PersistenciaBancoDados("localhost", "root", "", "northwind");
+$oPersConexao    = new PersistenciaBancoDados("localhost", "root", "", "northwind");
 $oPersTerritorio = new PersistenciaTerritorio($oPersConexao);
 ?>
 
@@ -28,12 +28,12 @@ $oPersTerritorio = new PersistenciaTerritorio($oPersConexao);
             <td style="width: 400px"><?= $oTerritorio["DescricaoTerritorio"] ?></td>
             <td style="width: 250px">
                 <form class="btn-group" action ="ViewManutencaoTerritorioAlterar.php" method ="POST">
-                    <input type ="hidden" name ="IDRegiao" value="<?php echo $oTerritorio["IDTerritorio"] ?>">
-                    <input class ="btn btn-primary" type ="submit" value ="Alterar"></input>
+                    <input type ="hidden" name ="IDTerritorio" value="<?php echo $oTerritorio["IDTerritorio"] ?>">
+                    <input class ="btn btn-primary" type ="submit" value ="Alterar">
                 </form>
                 <form class="btn-group" action ="/Roberto/WEB-II---Projeto-Dois/Controller/ControllerTerritorioDelete.php" method ="POST">
-                    <input type ="hidden" name ="IDRegiao" value="<?php echo $oTerritorio["IDTerritorio"] ?>">
-                    <input class ="btn btn-primary" type ="submit" value ="Excluir"></input>
+                    <input type ="hidden" name ="IDTerritorio" value="<?php echo $oTerritorio["IDTerritorio"] ?>">
+                    <input class ="btn btn-primary" type ="submit" value ="Excluir">
                 </form>
             </td>
         </tr>
