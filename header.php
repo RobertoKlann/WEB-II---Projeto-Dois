@@ -23,7 +23,7 @@
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionario.php">Consultar Funcionários</a>   
                             <a class="dropdown-item" href="/Roberto/WEB-II---Projeto-Dois/View/ViewManutencaoFuncionario.php">Cadastrar Funcionários</a>
-                            <a class="dropdown-item" href="/Roberto/WEB-II---Projeto-Dois/View/ViewManutencaoFuncionario.php">Funcionário x Território</a>
+                            <a class="dropdown-item" href="/Roberto/WEB-II---Projeto-Dois/View/ViewConsultaFuncionarioTerritorio.php">Funcionário x Território</a>
                           </div>
                         </li>
                         <li class="nav-item dropdown">

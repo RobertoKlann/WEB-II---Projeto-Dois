@@ -127,4 +127,14 @@ class PersistenciaFuncionario {
         return $aFuncionario;
     }
     
+    public function selectFuncionarioTerritorio() {
+        $sSql = "
+            SELECT *
+              FROM funcionarios_territorios
+                ";
+        
+        return mysqli_query($this->oFuncao->getConexao(), $sSql);
+        
+    }
+    
 }
